@@ -1,11 +1,11 @@
-import { WAMessageUpdate, proto } from "@whiskeysockets/baileys";
+import type { WAMessageUpdate, WAProto } from "@jlucaso/baileys";
 
 export interface SendMessageTypes {
   to: string | number;
   text?: string;
   sessionId: string;
   isGroup?: boolean;
-  answering?: proto.IWebMessageInfo;
+  answering?: WAProto.WebMessageInfo;
 }
 
 export interface SendMediaTypes extends SendMessageTypes {
@@ -16,10 +16,10 @@ export interface SendTypingTypes extends SendMessageTypes {
 }
 export interface SendReadTypes {
   sessionId: string;
-  key: proto.IMessageKey;
+  key: WAProto.MessageKey;
 }
 
-export interface MessageReceived extends proto.IWebMessageInfo {
+export interface MessageReceived extends WAProto.WebMessageInfo {
   /**
    * Your Session ID
    */
